@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'validate.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {% load static %}
+<br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ submitted_values.name }}"><br>
+            {% if name_error %}
+                <span class="error">{{ name_error }}</span>
+            {% endif %}
+<br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ submitted_values.email }}"><br>
+            {% if email_error %}
+                <span class="error">{{ email_error }}</span>
+            {% endif %}
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value="{{ submitted_values.password }}"><br>
+            {% if password_error %}
+                <span class="error">{{ password_error }}</span>
+            {% endif %}
+            <br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if submitted_values %}
+            <div class="submitted-values">
+                <h2>Submitted Values:</h2>
+                <div class="submitted-value-box">
+                    <p>Name: {{ submitted_values.name }}</p>
+                </div>
+                <div class="submitted-value-box">
+                    <p>Email: {{ submitted_values.email }}</p>
+                </div>
+                <div class="submitted-value-box">
+                    <p>Password: {{ submitted_values.password }}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

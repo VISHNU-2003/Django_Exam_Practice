@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form</title>
+</head>
+<body>
+    <h1>Simple Form</h1>
+    <form method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <label for="form_data">Enter Data:</label>
+        <input type="text" id="form_data" name="form_data">
+        <br>
+        <br>
+        <label for="form_data2">Enter Data 2:</label>
+        <input type ="text" id="form_data2" name="form_data2">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

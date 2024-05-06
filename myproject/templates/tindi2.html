@@ -1,0 +1,24 @@
+{% extends 'base1.html' %}
+{% block title %}
+{{ padardam.name }}
+{{ data.padardam }}
+{% endblock %}
+{% block css %}
+h1{
+    color : crimson;
+}
+table {
+    width: 100%;
+    font-size: 25px;
+}
+{% endblock %}
+{% block content %}
+<h1> Tindi Page </h1>
+<p> Welcome to our Tindi Pge</p>
+<a href="{% url 'tindi' %}">Vennaki Vellu</a>
+<table border="2" cellpadding="30">
+    <tr>
+        <td> {{data.Details}}</td>
+    </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+</head>
+<body>
+    {% load static %}
+    <h1>Blog Posts</h1>
+   {% for item in post %}
+<h1>{{item.title}}</h1>
+<h1>{{item.post}}</h1>
+<img src = "{{item.thumbnail.url}}" height="200" width = "200">
+{% endfor %}
+</body>
+</html>

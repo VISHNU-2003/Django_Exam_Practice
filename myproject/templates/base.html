@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+        <style>
+            {% block css %}
+            {% endblock %}
+        </style>
+    </head>
+    <body style="background-color: bisque">
+        {% include 'header.html' %}
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

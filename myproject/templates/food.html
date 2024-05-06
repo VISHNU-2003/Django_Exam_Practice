@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+Home 
+{% endblock %}
+{% block css %}
+h1{
+    color: crimson;
+}
+table{
+    width:20%;
+    font-size:30px;
+}
+{% endblock %}
+{% block content %}
+<h1>Food Page</h1>
+<p>Weclcome to oUr MenU PaGe</p>
+<table border="1" cellpadding="2">
+    <tr>
+        <th>Name</th>
+        <th>cost</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td><a href="{% url 'food2' item.name %}">{{item.name}}</a></td>
+        <td>{{item.cost}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

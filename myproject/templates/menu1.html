@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <h3>Fetcing the table data written in views</h3>
+    <table border="1">
+        <th>
+            <td>ITEMS</td>
+            <td>Price</td>
+        </th>
+        <caption>Excutive Indian Dishes</caption>
+        {% for items in menu%}
+        {% if items.Cost != "free" %}
+        <tr style="background-color: yellow">
+            <td> {{forloop.counter0}}</td>
+            <td> {{items.name}}</td>
+            <td>{{items.Cost}}</td>
+        </tr>
+        {% else %}
+        <tr style="background-color: red;">
+            <td>{{forloop.counter0}}</td>
+            <td>{{items.name}}</td>
+            <td>{{items.Cost}}</td>
+        </tr>
+        {%endif%}
+        {% endfor %}
+</body>
+</html>

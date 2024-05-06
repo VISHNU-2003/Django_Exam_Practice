@@ -1,0 +1,32 @@
+{% extends "base1.html" %}
+
+{% block title %}
+Illu
+{% endblock %}
+
+{% block css %}
+h1 {
+    color: rgba;
+}
+table {
+    width: 20%;
+    font-size: 28px;
+}
+{% endblock %}
+
+{% block content %}
+<h1>Tindi Page</h1>
+<p>Ma vardaku randi konukondi, sukanga undandi</p>
+<table border="2" cellpadding="3">
+    <tr>
+        <th>Peru</th>
+        <th>Viluva</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td><a href="{% url 'padardam2' padardam_name=item.Peru %}">{{ item.Peru }}</a></td>
+        <td>{{ item.Viluva }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
